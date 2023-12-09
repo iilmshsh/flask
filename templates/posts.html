@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Все статьи на сайте
+{% endblock %}
+
+
+{% block body %}
+<div class="container mt-5">
+    <h1>Все статьи на сайте</h1>
+
+    {% for i in articles %}
+    <div class="alert alert-info">
+        <h2> {{ i.title }} </h2>
+        <p> {{ i.intro }} </p>
+        <p> <b> {{ i.date.date() }} </b></p>
+        <a href="/posts/{{ i.id }}" class="btn btn-warning">детальнее</a>
+
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}
